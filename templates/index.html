@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF Q&A Bot</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .container {
+      margin-top: 60px;
+      max-width: 800px;
+    }
+    .card {
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    }
+    .btn-primary {
+      background-color: #4b7bec;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #3867d6;
+    }
+    .answer-box {
+      white-space: pre-wrap;
+      background: #fdfdfd;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card p-4">
+      <h2 class="text-center mb-3">📄 PDF Q&A Bot</h2>
+      <p class="text-muted text-center">Ask questions about your uploaded research papers</p>
+
+      <!-- Input form -->
+      <form method="POST" class="d-flex mb-3">
+        <input type="text" name="question" class="form-control me-2" placeholder="Enter your question..." required>
+        <button type="submit" class="btn btn-primary">Ask</button>
+      </form>
+
+      <!-- Answer box -->
+      {% if answer %}
+      <h5>💡 Answer:</h5>
+      <div class="answer-box">{{ answer }}</div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

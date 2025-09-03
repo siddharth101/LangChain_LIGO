@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LangChain QA</title>
+</head>
+<body>
+    <h2>Ask a question about the papers:</h2>
+    <form method="post">
+        <input type="text" name="question" size="80" required>
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if answer %}
+        <h3>Answer:</h3>
+        <p>{{ answer }}</p>
+    {% endif %}
+</body>
+</html>
+
